@@ -1,0 +1,26 @@
+.header-wrapper {
+    width: 100%;
+    background-color: rgb(22 51 0);
+    padding: 0 154px 0 154px;
+    height: 82px;
+}
+
+.header-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+.header-logo {
+    display: flex;
+    width: 10%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.header-text {}
+
+.np-logo-svg path {
+    fill: #9fe870
+}
