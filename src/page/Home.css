@@ -1,0 +1,26 @@
+.converter {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    /* background-color: brown; */
+    align-items: center;
+    justify-content: center;
+}
+
+.title {
+    width: 100%;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #9fe870;
+}
+
+.calculator {
+    width: 100%;
+    height: 260px;  
+    background-color: blue;
+    border: solid;
+    border-radius: 30px;
+}
