@@ -21,7 +21,7 @@
 
 .calculator-container {
     width: 100%;
-    height: 260px;  
+    height: 260px;
     background-color: white;
     border: solid;
     border-radius: 32px;
@@ -52,7 +52,10 @@
 .conclusion {
     width: 100%;
     height: 40%;
-    background-color: chocolate;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
+    background-color: chocolate;
+    align-items: center;
+    justify-content: center;
+    display: flex;
 }
 
 .form-group {
@@ -81,10 +84,59 @@ label {
     height: 67px;
     border-bottom-left-radius: 16px;
     border-top-left-radius: 16px;
+    border: solid;
+}
+
+
+
+.custom-input:focus {
+    outline: none;
 }
 
 .national-group {
     display: flex;
     background-color: white;
     width: 20%;
+}
+
+#dropdown-basic.national-btn {
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    border: solid;
+    border-bottom-left-radius: 0px;
+    border-top-left-radius: 0px;
+    border-bottom-right-radius: 16px;
+    border-top-right-radius: 16px;
+    border-left: hidden;
+    background-color: yellow !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+}
+
+.custom-btn {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    border: none;
+    outline: none;
+}
+
+.flag {
+    width: 20px;
+    height: 20px;
+    background-color: red;
+    border-radius: 50%;
+}
+
+.ensign {
+    width: 40px;
+    height: 20px;
+    background-color: pink;
+
+}
+
+.icon svg {
+    transform: scaleY(-1);
 }
