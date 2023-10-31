@@ -45,14 +45,12 @@
     justify-content: space-between;
     width: 100%;
     height: 60%;
-    background-color: burlywood;
 }
 
 
 .conclusion {
     width: 100%;
     height: 40%;
-    background-color: chocolate;
     align-items: center;
     justify-content: center;
     display: flex;
@@ -61,7 +59,6 @@
 .form-group {
     width: 46%;
     height: 100%;
-    background-color: coral;
     display: flex;
     /* justify-content: center; */
     flex-direction: column;
@@ -76,7 +73,7 @@ label {
     width: 100%;
     height: 67px;
     display: flex;
-
+    font-size: 23px;
 }
 
 .input-group input {
@@ -139,4 +136,17 @@ label {
 
 .icon svg {
     transform: scaleY(-1);
+}
+
+.dropdown-item {
+    display: flex !important;
+    align-items: center !important;
+    gap: 10px;
+}
+
+.dropdown-ensign {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: firebrick;
 }
