@@ -1,0 +1,28 @@
+.calculator-container {
+    width: 100%;
+    height: 260px;
+    background-color: white;
+    border: solid;
+    border-radius: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.calculator-content {
+    width: 93%;
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.conclusion {
+    width: 100%;
+    height: 40%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
