@@ -1,4 +1,5 @@
 import Dropdown from "react-bootstrap/Dropdown";
+import CountrySelect from "./CountrySelect";
 
 function RightSideFormInput() {
     return (
@@ -6,21 +7,7 @@ function RightSideFormInput() {
             <label>Amount of money</label>
             <div className="input-group">
                 <input className="custom-input" />
-                <Dropdown className="national-group">
-                    <Dropdown.Toggle
-                        className="national-btn custom-btn"
-                        variant={null}
-                        id="dropdown-basic">
-                        <div className="flag"></div>
-                        <div className="ensign"></div>
-                    </Dropdown.Toggle>
-                    <Dropdown.Menu>
-                        <Dropdown.Item href="#/action-1">
-                            <div className="dropdown-ensign"></div>
-                            <span>USA</span>
-                        </Dropdown.Item>
-                    </Dropdown.Menu>
-                </Dropdown>
+                <CountrySelect/>
             </div>
         </div>
     );

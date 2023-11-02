@@ -85,10 +85,17 @@ label {
     transform: scaleY(-1);
 }
 
+.dropdown-menu.show {
+    width: 140px !important;
+    height: 500px !important;
+}
+
 .dropdown-item {
     display: flex !important;
     align-items: center !important;
-    gap: 10px;
+    justify-content: center !important;
+    gap: 5px !important;
+    font-size: 20px !important;
 }
 
 .dropdown-ensign {
