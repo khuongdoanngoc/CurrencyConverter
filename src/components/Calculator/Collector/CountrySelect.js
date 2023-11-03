@@ -7,7 +7,6 @@ function CountrySelect({ countries, indexOfCountrySelected }) {
     const [countrySelected, setCountrySelected] = useState("");
 
     useEffect(() => {
-        console.log('SET COUNTRY SELECTED...')
         setCountrySelected(countries[indexOfCountrySelected])
     }, [countries, indexOfCountrySelected]);
 
