@@ -7,7 +7,7 @@ function LeftSideFromInput(props) {
         <div className="form-group">
                 <label>Amount of money</label>
                 <div className="input-group">
-                    <input className="custom-input" />
+                    <input className="custom-input" type="number" />
                     <CountrySelect countries={props.countries} indexOfCountrySelected={131}/>
                 </div>
             </div>
