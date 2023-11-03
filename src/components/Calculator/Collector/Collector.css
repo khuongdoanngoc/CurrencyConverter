@@ -68,17 +68,9 @@ label {
     outline: none;
 }
 
-.flag {
-    width: 20px;
+.label-selected {
+    width: 100%;
     height: 20px;
-    background-color: red;
-    border-radius: 50%;
-}
-
-.ensign {
-    width: 40px;
-    height: 20px;
-    background-color: pink;
 }
 
 .icon svg {
@@ -87,7 +79,9 @@ label {
 
 .dropdown-menu.show {
     width: 140px !important;
-    height: 500px !important;
+    max-height: 200px !important;
+    overflow-y: 'auto' !important;
+    position: absolute;
 }
 
 .dropdown-item {
