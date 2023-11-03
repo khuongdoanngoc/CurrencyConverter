@@ -1,13 +1,13 @@
-import Dropdown from "react-bootstrap/Dropdown";
 import CountrySelect from "./CountrySelect";
 
-function RightSideFormInput() {
+function RightSideFormInput(props) {
+
     return (
         <div className="form-group">
             <label>Amount of money</label>
             <div className="input-group">
                 <input className="custom-input" />
-                <CountrySelect/>
+                <CountrySelect countries={props.countries} indexOfCountrySelected={128}/>
             </div>
         </div>
     );
