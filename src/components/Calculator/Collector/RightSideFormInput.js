@@ -4,10 +4,10 @@ function RightSideFormInput(props) {
 
     return (
         <div className="form-group">
-            <label>Amount of money</label>
+            <label>Converted to</label>
             <div className="input-group">
-                <input className="custom-input" />
-                <CountrySelect countries={props.countries} indexOfCountrySelected={128}/>
+                <input className="custom-input" type="number" />
+                <CountrySelect countries={props.countries} indexOfCountrySelected={131}/>
             </div>
         </div>
     );
