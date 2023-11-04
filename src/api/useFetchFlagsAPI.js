@@ -13,7 +13,7 @@ function FetchFlagsAPI() {
         axios
             .get(flagsAPI)
             .then((response) => {
-                console.log("fetch api to get flags...");
+                // console.log("fetch api to get flags...");
                 const countriesFromFlagsAPI = response.data.countries;
                 const labelsFromFlagsAPI = countriesFromFlagsAPI.map(
                     (country) => country.label
