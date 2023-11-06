@@ -3,7 +3,7 @@ import './Title.css'
 function Title() {
     return (
         <div className="title">
-            <h1>CURRENCY CONVERSION</h1>
+            <h1>CURRENCY CONVERTER</h1>
         </div>
     );
 }
