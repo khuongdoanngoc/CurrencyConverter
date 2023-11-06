@@ -2,13 +2,18 @@ import { useEffect, useState } from "react";
 
 import Dropdown from "react-bootstrap/Dropdown";
 
-
 function CountrySelect({ countries, indexOfCountrySelected }) {
     const [countrySelected, setCountrySelected] = useState("");
 
     useEffect(() => {
-        setCountrySelected(countries[indexOfCountrySelected])
+        if (countries.length !== 0) {
+            setCountrySelected(countries[indexOfCountrySelected]);
+        }
     }, [countries, indexOfCountrySelected]);
+
+    const handleLabelChange = (country) => {
+        setCountrySelected(country);
+    };
 
     return (
         <Dropdown className="national-group">
@@ -28,7 +33,7 @@ function CountrySelect({ countries, indexOfCountrySelected }) {
                 {countries.map((country) => (
                     <Dropdown.Item
                         key={country}
-                        onClick={() => setCountrySelected(country)}
+                        onClick={() => handleLabelChange(country)}
                         style={{ fontFamily: "monospace", fontSize: "15px" }}>
                         {country}
                     </Dropdown.Item>

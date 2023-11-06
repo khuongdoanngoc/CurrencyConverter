@@ -1,7 +1,7 @@
 function Conclusion({ amount }) {
     return (
         <div className="conclusion">
-            <h2>{amount}</h2>
+            <h2></h2>
         </div>
     );
 }
