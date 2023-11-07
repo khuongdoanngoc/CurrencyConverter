@@ -1,19 +1,18 @@
 import "./Calculator.css";
 
 import Collector from "./Collector/Collector";
-import Conclusion from "./Conclusion";
+import Timer from "./Timer";
 
 import useFetchRatesAPI from "../../api/useFetchRatesAPI";
-import { useEffect, useState } from "react";
 
 function Calculator() {
-    const [ amount, setAmount ] = useState(1);
+    const resRatesAPI = useFetchRatesAPI();
 
     return (
         <div className="calculator-container">
             <div className="calculator-content">
                 <Collector />
-                <Conclusion amount={amount}/>
+                <Timer date={resRatesAPI.timer}/>
             </div>
         </div>
     );
