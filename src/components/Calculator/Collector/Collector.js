@@ -9,7 +9,7 @@ import useFetchRatesAPI from "../../../api/useFetchRatesAPI";
 
 function Collector({ handleCollectorChange }) {
     const { countries } = useFetchFlagsAPI();
-    const rates = useFetchRatesAPI();
+    const resRatesAPI = useFetchRatesAPI();
 
     // amount states
     const [leftAmount, setLeftAmount] = useState(0);
@@ -19,29 +19,63 @@ function Collector({ handleCollectorChange }) {
     const [leftCountrySelected, setLeftCountrySelected] = useState("USD");
     const [rightCountrySelected, setRightCountrySelected] = useState("VND");
 
+    // handle inputs change
     const handleLeftInputChange = (amountFromInput) => {
         setLeftAmount(amountFromInput);
 
-        if (amountFromInput <= 0) {
-            setRightAmount(0);
-        } else {
-            // convert to right amount
-            const convertedAmount = amountFromInput + 5;
-            // set right amount converted
-            setRightAmount(convertedAmount);
-        }
+        // convert to right amount
+        const amountConverted = convert(
+            amountFromInput,
+            leftCountrySelected,
+            rightCountrySelected
+        );
+
+        // set right amount converted
+        setRightAmount(amountConverted);
     };
 
     const handleRightInputChange = (amountFromInput) => {
         setRightAmount(amountFromInput);
-        if (amountFromInput <= 0) {
-            setLeftAmount(0);
-        } else {
-            // convert to left amount
-            const convertedAmount = amountFromInput + 10;
-            // set left amount converted
-            setLeftAmount(convertedAmount);
-        }
+
+        // convert to left amount
+        const amountConverted = convert(
+            amountFromInput,
+            rightCountrySelected,
+            leftCountrySelected
+        );
+
+        // set left amount converted
+        setLeftAmount(amountConverted);
+    };
+    // <------>
+
+    // handle countries change
+    const handleLeftCountryChange = (countryLeftSide) => {
+        setLeftCountrySelected(countryLeftSide);
+        const amountConverted = convert(
+            leftAmount,
+            countryLeftSide,
+            rightCountrySelected
+        );
+        setRightAmount(amountConverted);
+    };
+
+    const handleRightCountryChange = (countryRightSide) => {
+        setRightCountrySelected(countryRightSide);
+        const amountConverted = convert(
+            rightAmount,
+            countryRightSide,
+            leftCountrySelected
+        );
+        setLeftAmount(amountConverted);
+    };
+
+    // convert function
+    const convert = (amount, countryFrom, countryTo) => {
+        const rateCountryFrom = resRatesAPI.rates[countryFrom];
+        const rateCountryTo = resRatesAPI.rates[countryTo];
+        const amountConverted = (amount / rateCountryFrom) * rateCountryTo;
+        return amountConverted.toFixed(0);
     };
 
     return (
@@ -50,12 +84,14 @@ function Collector({ handleCollectorChange }) {
                 countries={countries}
                 amount={leftAmount}
                 onLeftInputChange={handleLeftInputChange}
+                onLeftCountryChange={handleLeftCountryChange}
             />
             <ReverseIcon />
             <RightSideFormInput
                 countries={countries}
                 amount={rightAmount}
                 onRightInputChange={handleRightInputChange}
+                onRightCountryChange={handleRightCountryChange}
             />
         </div>
     );

@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 
 import Dropdown from "react-bootstrap/Dropdown";
 
-function CountrySelect({ countries, indexOfCountrySelected }) {
+function CountrySelect({ countries, indexOfCountrySelected, onCountryChange }) {
     const [countrySelected, setCountrySelected] = useState("");
 
     useEffect(() => {
@@ -13,6 +13,7 @@ function CountrySelect({ countries, indexOfCountrySelected }) {
 
     const handleLabelChange = (country) => {
         setCountrySelected(country);
+        onCountryChange(country)
     };
 
     return (

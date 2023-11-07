@@ -1,7 +1,8 @@
-import { useState } from "react";
+import { memo } from "react";
 import CountrySelect from "./CountrySelect";
 
-function LeftSideFormInput({ countries, amount, onLeftInputChange }) {
+function LeftSideFormInput({ countries, amount, onLeftInputChange, onLeftCountryChange }) {
+
     const handleChange = (event) => {
         const floatValue = parseFloat(event.target.value);
         if (floatValue > 0) {
@@ -11,23 +12,29 @@ function LeftSideFormInput({ countries, amount, onLeftInputChange }) {
         }
     };
 
+    const handleCountryChange = (country) => {
+        // remove flag
+        const newCountry = country.split(' ')[1];
+        onLeftCountryChange(newCountry)
+    }
+
     return (
         <div className="form-group">
             <label>Amount</label>
             <div className="input-group">
                 <input
                     className="custom-input"
-                    type="type"
                     value={amount}
                     onChange={handleChange}
                 />
                 <CountrySelect
                     countries={countries}
                     indexOfCountrySelected={128}
+                    onCountryChange={handleCountryChange}
                 />
             </div>
         </div>
     );
 }
 
-export default LeftSideFormInput;
+export default memo(LeftSideFormInput);
